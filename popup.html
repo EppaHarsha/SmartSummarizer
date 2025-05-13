@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Summarizer</title>
+  <style>
+    body {
+      width: 600px;
+      padding: 24px;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(145deg, #eef1f5, #ffffff);
+      color: #333;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #4A90E2;
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    select {
+      width: 50%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.03);
+    }
+
+    #summarize {
+      background-color: #4A90E2;
+      color: #fff;
+    }
+
+    #summarize:hover {
+      background-color: #357ABD;
+    }
+
+    #copy-btn {
+      background-color: #27ae60;
+      color: #fff;
+    }
+
+    #copy-btn:hover {
+      background-color: #219150;
+    }
+
+    #result {
+      white-space: pre-wrap;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid #ccc;
+      border-radius: 14px;
+      padding: 16px;
+      max-height: 300px;
+      overflow-y: auto;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #4A90E2;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .footer {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h2>Smart Summarizer</h2>
+
+  <select id="summary-type">
+    <option value="brief">Brief</option>
+    <option value="detailed">Detailed</option>
+    <option value="bullets">Bullet Points</option>
+  </select>
+
+  <div class="action-buttons">
+    <button id="summarize" class="btn">Summarize</button>
+    <button id="copy-btn" class="btn">Copy</button>
+  </div>
+
+  <div id="result">Select a type and click Summarize</div>
+
+  <!-- <div class="footer">🧠 Powered by Gemini API</div> -->
+
+  <script src="popup.js"></script>
+</body>
+</html>
